@@ -1,28 +1,26 @@
-#include<stdio.h>
+#include <stdio.h>
 
 int str_chnum(const char s[], char c){
+	int i = 0, cnt = 0;
 	
-	int len = 0;
-	int num = 0;
-	
-	while(s[len]){
-		len++;
-		if(s[len] == 'c'){
-			num++;
+	while(s[i] != '\0'){
+		if((s[i]) == c){
+			cnt++;
 		}
+		i++;
 	}
-	
-	return num;
+	return cnt;
 }
 
 int main (void){
 	
-	char c;
-	char s[1000];
+	char s[] = "ababccddeee";
+	char c = 'e';
+	int cnt;
 	
-	scanf("%s", s);
+	cnt = str_chnum(s, c);
 	
-	printf("%d", str_chnum(s, c));
+	printf("%d", cnt); 
 	
 	return 0;
 }

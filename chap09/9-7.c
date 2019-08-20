@@ -1,34 +1,18 @@
 #include<stdio.h>
 
-void put_stringn(const char str[], int n){
-	
+void put_stringn(const char s[], int n){
 	int i;
-	
-	for(i = 0; i < n; i++){
-		
-		int j = 0;
-		while(str[j]){
-			
-			putchar(str[j++]);
-		}	
+	for(i =0; i < n; i++){
+		printf("%s", s);
 	}
-}
+} 
 
 int main (void){
 	
-	int n;
-	char str[128];
+	char s[] = "abc";
+	int n = 3;
 	
-	printf("请输入字符串：");
-	
-	scanf("%s", str);
-	
-	printf("请输入字符串显示次数：");
-	
-	scanf("%d", &n);
-	
-	printf("最后的结果是：");
-	put_stringn(str, n);
+	put_stringn(s, n);
 	
 	return 0;
 }

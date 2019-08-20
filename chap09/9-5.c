@@ -1,29 +1,28 @@
-#include<stdio.h>
+#include <stdio.h>
 
-int str_char(const char s[], char c){
-	
-	int len = 0;
-	
-	while(s[len]){
-		len++;
-		if(s[len] == 'c'){
-			return len + 1;
+int str_char(const char s[], int c){
+	int cnt = -1, i = 0;
+	while(s[i] != '\0'){
+		if(s[i] == c){
+			cnt = i;
+			printf("cnt=%d", cnt);
+			break;
 		}
-		else if((s[len] != c) && s[len] == '\0'){
-			return -1;
-		}
+		i++;
+		printf("%d", i);
 	}
-	
-}
+	return cnt;
+} 
 
 int main (void){
 	
-	char c;
-	char s[1000];
+	char s[] = "abc4";
+	int cnt;
+	char c = 'b';
 	
-	scanf("%s", s);
+	cnt = str_char(s, c);
 	
-	printf("%d", str_char(s, c));
+	printf("%d", cnt);
 	
 	return 0;
 }

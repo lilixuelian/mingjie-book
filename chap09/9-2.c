@@ -3,12 +3,13 @@
 int main (void){
 	
 	char s[] = "ABC";
+	int i;
 	
-	printf("%s\n", s);
+	for(i = 0; i < 3; i++){
+		s[i] = 0;
+	}
 	
-	s[0] = '\0';
-	
-	printf("%s\n", s);	
+	printf("%s", s);
 	
 	return 0;
-}
+} 
